@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-
+if [ "$#" -eq "3" ]; then 
 if [ "$1" -gt "$2" ];
 	then if ["$1" -gt "$3"];
 	then echo "$1"
@@ -9,11 +9,17 @@ if [ "$1" -gt "$2" ];
 		echo "$3"
 fi
 
-elif ["$2" -gt "$1"];
-	then if ["$2" -gt "$3"];
+elif [ "$2" -gt "$1" ];
+	then if [ "$2" -gt "$3" ];
 	then echo "$2"
 	else
 	echo "$3"
 fi
+
+
+fi
+else
+echo "Error: You must use only 3 parameters"
+
 fi
 
